@@ -20,7 +20,7 @@
 						   Text="Connect to receiver">
 				</TextBlock>
 			</Border>
-			<StackPanel Margin="10" Orientation="Horizontal">
+			<StackPanel Margin="10" Orientation="Horizontal" >
 				<ComboBox Name="DropDown" SelectedIndex="0"  >
 				</ComboBox>
 				<Button Name="Refresh" Click="Refresh_Click" >Refresh</Button>

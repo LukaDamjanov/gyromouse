@@ -94,18 +94,25 @@ public partial class MainView : UserControl
     {
         var deviceList = DeviceList.Local;
         Task.Delay(50).Wait();
-        var device = deviceList.GetHidDevices(vendorId, productId).FirstOrDefault(defaultValue: null);
-        if (device == null)
+        var devices = deviceList.GetHidDevices(vendorId, productId);
+        if (devices.Count()==0)
         {
             Log.Information("Inserted device is not what we want");
             return;
         }
-        Log.Information("Connected to HID device");
+        
 
 
         if (_hidStream is null)
         {
-            _hidStream = device.Open();
+            foreach (var device in devices)
+                try
+                {
+                    var temp = device.Open();
+                    _hidStream = temp;
+                }
+                catch (Exception ex) { }
+            Log.Information("Connected to HID device");
         }
         else
             return;
