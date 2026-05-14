@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:GetStartedApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="600"
+             x:Class="GetStartedApp.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<Grid ColumnDefinitions="2*,8,*" RowDefinitions="*">
+		<StackPanel Grid.Column="0">
+			<Border Margin="5" CornerRadius="10" Background="LightBlue">
+				<TextBlock Margin="5"
+						   FontSize="24"
+						   HorizontalAlignment="Center"
+						   Text="Connect to receiver">
+				</TextBlock>
+			</Border>
+			<StackPanel Margin="10" Orientation="Horizontal" >
+				<ComboBox Name="DropDown" SelectedIndex="0"  >
+				</ComboBox>
+				<Button Name="Refresh" Click="Refresh_Click" >Refresh</Button>
+				<Button Name="Connect" Click="Connect_Click" >Connect</Button>
+				<Button Name="Disconnect" HotKey="Escape" Click="Discconect_Click" >Disconnect</Button>
+
+			</StackPanel>
+
+
+			<TextBlock Name="SerialOut"  HorizontalAlignment="Center" >Text</TextBlock>
+
+			<TextBlock Name="DeviceStatus" >🟡 Ready</TextBlock>
+
+			<TextBlock Text="{Binding Value,ElementName= MouseSpeed }" Margin="10" >Label x:</TextBlock>
+			<Slider  Name="MouseSpeed" Value="1" Margin="10" Minimum="0" Maximum="5"></Slider>
+			<ComboBox Name="ImplementationDisp" SelectionChanged="ImplementationDisp_SelectionChanged" Margin="10"  MaxDropDownHeight="100">
+				
+			</ComboBox>
+		</StackPanel>
+		<GridSplitter Grid.Column="1" Background="Red"></GridSplitter>
+		<StackPanel Grid.Column="2" Margin="5" >
+			<Border  CornerRadius="10" Background="LightBlue">
+				<TextBlock Margin="5"
+						   FontSize="24"
+						   HorizontalAlignment="Center"
+						   Text="Log">
+				</TextBlock>
+			</Border>
+		<TextBox Margin="5" Name="LogTextBox"  IsReadOnly="True" Height="500" AcceptsReturn="True"   TextWrapping="Wrap" FontFamily="Consolas" FontSize="12"     />
+		</StackPanel>
+
+	</Grid>
+</UserControl>
