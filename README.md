@@ -2,7 +2,7 @@
 
 ## Overview
 
-This device is to help people use their co 
+This device aims to help people control their computer mouse pointer when they cannot use a standard computer mouse, it does this by tracking the user's head movement with an onboard Inertial Measurement Unit (IMU) module. The device also features a wireless dongle that allows it to connect to any device by mimicking a standard mouse. Using the provided app for the device the user can also change its sensitivity to movement.
 
 
 ## Features
@@ -47,7 +47,7 @@ Set the startap project in Visual Studio to be StartedApp, and not GetStartedApp
 ## Software for the devices
 Requirments:
 - Visual Studio Code
-- PltformIO extention
+- PlatformIO extention
 
 The code for the Dongle is located in the folder `/Dongle` folder
 
@@ -59,7 +59,13 @@ Here is a generic tutorial on how to run PlatformIO projects.
 
 
 
-## Hardware schematics
+## Hardware
+- ESP32 S3 for the dongle.
+- ESP32 for the gyromouse itself.
+- MPU6050 IMU.
+- 500~600 mAh li-po battery.
+- charging and discharging module for the battery.
+- generic switch for the battery.
 
 The schematics were made in KiCad and they can be found int `/HardwareSchematics` folder.
 
