@@ -1,6 +1,9 @@
 # Assistive device for using a computer without a mouse (gyromouse)
 
 ## Overview
+<img width="1032" height="780" alt="image" src="https://github.com/user-attachments/assets/3d750844-d061-4c49-8a24-7b11b21bf081" />
+
+
 
 This device aims to help people control their computer mouse pointer when they cannot use a standard computer mouse, it does this by tracking the user's head movement with an onboard Inertial Measurement Unit (IMU) module. The device also features a wireless dongle that allows it to connect to any device by mimicking a standard mouse. Using the provided app for the device the user can also change its sensitivity to movement.
 
@@ -69,11 +72,15 @@ Here is a generic tutorial on how to run PlatformIO projects.
 
 The schematics were made in KiCad and they can be found int `/HardwareSchematics` folder.
 
+<img width="754" height="720" alt="image" src="https://github.com/user-attachments/assets/f4b5f96b-aafb-49c5-806a-6b7fb61679c3" />
 
 
 
 
 ## 3D models
+<img width="1514" height="1090" alt="image" src="https://github.com/user-attachments/assets/9388eab5-779c-4bfd-b953-8275632f6454" />
+<img width="1741" height="1050" alt="image" src="https://github.com/user-attachments/assets/c52f9fc6-faf7-4b94-9f45-9aff3f9a3021" />
+
 
 The 3D models can be found in `/3d models` folder.
 
