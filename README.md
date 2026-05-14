@@ -2,16 +2,13 @@
 
 ## Overview
 
-This device is to help people use their co
+This device is to help people use their co 
 
 
 ## Features
 
 The only supported feature currently allows the mouse pointer to move based on the user's head movements (up, down, left, and right).
 
-## Where is supported
-
-The dongle can be connected to devices such as Computers, Laptops, Tablets or Smartphones that support USB OTG. The device also works on Window
 
 ### Supported devices
 |  Device type |  Does it work? |
