@@ -6,8 +6,8 @@ df = pd.read_csv('./teleplot_2026-6-23_16-13.csv')
 
 # 2. Create the line plot
 # Specify which columns to use for the X and Y axes
-plt.plot(df['timestamp(ms)'].interpolate(method='linear'), df['varx'].interpolate(method='linear'), marker='.', color='b', linestyle='-',label ="X axis")
-plt.plot(df['timestamp(ms)'].interpolate(method='linear'), df['vary'].interpolate(method='linear'), marker='.', color='r', linestyle='-',label ="Y axis")
+plt.plot(df['timestamp(ms)'].interpolate(method='linear'), df['varx'].interpolate(method='linear'), marker='.', color='b', linestyle='-',label ="Mouse X axis")
+plt.plot(df['timestamp(ms)'].interpolate(method='linear'), df['vary'].interpolate(method='linear'), marker='.', color='r', linestyle='-',label ="Mouse Y axis")
 
 
 # Highlight specific background regions based on X values
@@ -17,8 +17,8 @@ plt.axvspan(1782223966.5, 1782223971, facecolor='green', alpha=0.2, label='Diago
 
 # 3. Add titles and labels for clarity
 plt.title('Mouse cursor movement', fontsize=18)
-plt.xlabel('Time', fontsize=15)
-plt.ylabel('Relative movment from current position (pixels)', fontsize=15)
+plt.xlabel('Time [seconds]', fontsize=15)
+plt.ylabel('Relative movment from current position [pixels]', fontsize=15)
 
 # 4. Enhance the visual layout
 plt.grid(True)
