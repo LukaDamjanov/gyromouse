@@ -93,13 +93,15 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
 
   switch (config.mouseMode) {
   case Direct: {
-    Serial.print(">myData.gy:");
-    Serial.println(myData.gy);
-    Serial.print(">myData.gz:");
-    Serial.println(myData.gz);
+    
 
-    int8_t varx = -myData.gy - 3.11;
-    int8_t vary = myData.gz + 0.5;
+    float varx = -myData.gy -2.5+1.1;
+    float vary = myData.gz +0.65;
+
+    Serial.print(">varx:");
+    Serial.println(varx);
+    Serial.print(">vary:");
+    Serial.println(vary);
 
     if (abs(varx) < 2) {
       varx = 0;
@@ -108,7 +110,7 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
       vary = 0;
     }
 
-    Mouse->move(varx, vary);
+    Mouse->move((uint8_t)varx, (uint8_t)vary);
   } break;
   case Integration: {
     float varx = -myData.gy - 3.11 + 0.85 + 0.0599;
