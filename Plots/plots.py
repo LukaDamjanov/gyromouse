@@ -13,18 +13,19 @@ plt.plot(df['timestamp(ms)'].interpolate(method='linear'), df['vary'].interpolat
 # Highlight specific background regions based on X values
 plt.axvspan(1782223962,   1782223964.5, facecolor='red', alpha=0.2, label='Vertical movement')
 plt.axvspan(1782223964.5,   1782223966.5, facecolor='yellow', alpha=0.2, label='Horisontal movement')
-plt.axvspan(1782223966.5, 1782223970, facecolor='green', alpha=0.2, label='Diagonal movement')
+plt.axvspan(1782223966.5, 1782223971, facecolor='green', alpha=0.2, label='Diagonal movement')
 
 # 3. Add titles and labels for clarity
-plt.title('Mouse cursor movement', fontsize=14)
-plt.xlabel('Time', fontsize=12)
-plt.ylabel('Relative movment from current position (pixels)', fontsize=12)
+plt.title('Mouse cursor movement', fontsize=18)
+plt.xlabel('Time', fontsize=15)
+plt.ylabel('Relative movment from current position (pixels)', fontsize=15)
 
 # 4. Enhance the visual layout
 plt.grid(True)
 plt.tight_layout()
 plt.xlim(left=1782223961,right = 1782223971.6)
-plt.legend(loc='lower left') 
+plt.legend(loc='lower left')
+plt.legend(fontsize=15)
 
 # 5. Display the plot
 plt.show()
