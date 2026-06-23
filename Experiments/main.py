@@ -1,14 +1,16 @@
 import pygame
 import math
 import statistics
+import random
+import pyautogui
 
-
+# ----------------------------
 # Settings
-
+# ----------------------------
 WIDTH, HEIGHT = 1000, 700
-TARGET_RADIUS = 8
-CLICK_RADIUS = 4
-NUM_CLICKS = 20
+TARGET_RADIUS = 11
+CLICK_RADIUS = 2
+NUM_CLICKS = 35
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -19,6 +21,8 @@ clock = pygame.time.Clock()
 
 target = (WIDTH // 2, HEIGHT // 2)
 clicks = []
+
+screen_width, screen_height = pyautogui.size()
 
 
 def distance(p1, p2):
@@ -54,17 +58,23 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if len(clicks) < NUM_CLICKS:
                 clicks.append(event.pos)
+                # Generate random X and Y coordinates within screen boundaries
+                random_x = random.randint(0, screen_width - 1)
+                random_y = random.randint(0, screen_height - 1)
+
+                # Move the cursor to the random location
+                pyautogui.moveTo(random_x, random_y)
 
     if len(clicks) == NUM_CLICKS:
         running = False
 
-    clock.tick(60)
+    clock.tick(120)
 
 pygame.quit()
 
-
+# ----------------------------
 # Calculations
-
+# ----------------------------
 
 xs = [p[0] for p in clicks]
 ys = [p[1] for p in clicks]
@@ -96,8 +106,10 @@ sorted_errors = sorted(errors)
 cep50 = sorted_errors[int(0.50 * len(sorted_errors))]
 cep95 = sorted_errors[min(int(0.95 * len(sorted_errors)), len(sorted_errors)-1)]
 
-
+# ----------------------------
 # Results
+# ----------------------------
+
 print("\n========== RESULTS ==========")
 print(f"Target            : {target}")
 print(f"Average Click     : ({mean_x:.2f}, {mean_y:.2f})")
